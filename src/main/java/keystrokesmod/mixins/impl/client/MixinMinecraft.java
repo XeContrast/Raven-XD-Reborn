@@ -151,7 +151,7 @@ public abstract class MixinMinecraft  implements IThreadListener, IPlayerUsage {
 
     @Inject(method = "createDisplay", at = @At(value = "RETURN"))
     private void onSetTitle(@NotNull CallbackInfo ci) {
-        Display.setTitle("RavenXe " + Watermark.VERSION);
+        Display.setTitle("RavenXD " + Watermark.VERSION);
     }
 
     /**
