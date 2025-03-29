@@ -1,0 +1,49 @@
+{
+  "required": true,
+  "package": "keystrokesmod.mixins.impl",
+  "refmap": "mixins.raven.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "client.MixinInventoryPlayer",
+    "entity.MixinEntity",
+    "entity.MixinEntityLivingBase",
+    "entity.MixinEntityPlayer",
+    "entity.MixinEntityPlayerSP",
+    "event.MixinEventBus",
+    "gui.MixinSplashProgress",
+    "gui.MixinSplashProgressThread",
+    "network.MixinModList",
+    "network.MixinNetworkManager",
+    "render.MixinFontRenderer",
+    "render.MixinLayerCape",
+    "render.MixinLocale",
+    "render.MixinModelBiped",
+    "render.MixinRendererLivingEntity",
+    "world.MixinBlock",
+    "world.MixinBlockLadder",
+    "world.MixinBlockWeb"
+  ],
+  "client": [
+    "client.MixinEntityRenderer",
+    "client.MixinMinecraft",
+    "client.MixinMovementInputFromOptions",
+    "client.MixinPlayerControllerMP",
+    "gui.MixinGuiButton",
+    "gui.MixinGuiChat",
+    "gui.MixinGuiConnecting",
+    "gui.MixinGuiContainer",
+    "gui.MixinGuiDownloadTerrain",
+    "gui.MixinGuiMainMenu",
+    "gui.MixinGuiScreen",
+    "gui.MixinGuiMultiplayer",
+    "network.MixinClientSpoofer",
+    "network.MixinNetHandlerPlayClient",
+    "render.MixinBlockRendererDispatcher",
+    "render.MixinEntityRenderer",
+    "render.MixinItemRenderer"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
