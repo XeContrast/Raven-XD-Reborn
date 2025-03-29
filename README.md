@@ -17,9 +17,6 @@ Raven B4, but for those who can't afford it.
 
 Raven B4, but not only for Hypixel.
 
-<a href="https://dsc.gg/ravenxd"><img src="https://invidget.switchblade.xyz/zSgDKArSH4" alt="https://dsc.gg/ravenxd"/></a><br>
-[QQ Group (645021103)](https://qm.qq.com/q/vv0xPdfc6A)
-
 ![2024-08-13_10 14 36](https://github.com/user-attachments/assets/36e8920e-336e-4b62-ae3f-6b9962920812)
 ![Screenshot 2024-08-13 084510](https://github.com/user-attachments/assets/85637f18-9d6b-47d9-9dc2-cb8594aff585)
 </div>
@@ -78,16 +75,5 @@ Raven B4, but not only for Hypixel.
 
 
 ## Contribute
-Feel free to raise an issue or submit a pull request.
 
-If you want to co-develop this project with me, please contact me.
-
-You can also support us on [Patreon](https://www.patreon.com/xia__mc)!
-
-<div align="center">
-
-[!![-preview](https://github.com/user-attachments/assets/ac50e6e5-3227-4ee9-9881-2e7b8ba47861)](https://www.patreon.com/xia__mc)
-
-<img src="https://github.com/SAWARATSUKI/KawaiiLogos/blob/main/IntelliJ IDEA/IntelliJ IDEA.png" alt="Java" width="500" />
-
-</div>
+I don't need any

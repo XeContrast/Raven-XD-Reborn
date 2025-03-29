@@ -1,5 +1,6 @@
 package keystrokesmod.mixins.impl.client;
 
+import de.florianmichael.viamcp.fixes.AttackOrder;
 import keystrokesmod.Raven;
 import keystrokesmod.event.ClickEvent;
 import keystrokesmod.event.PreTickEvent;
@@ -71,6 +72,9 @@ public abstract class MixinMinecraft  implements IThreadListener, IPlayerUsage {
     @Shadow
     private static final Logger logger = LogManager.getLogger();
 
+    @Shadow
+    public MovingObjectPosition objectMouseOver;
+
     @Inject(method = "runTick", at = @At("HEAD"))
     private void runTickPre(CallbackInfo ci) {
         MinecraftForge.EVENT_BUS.post(new PreTickEvent());
@@ -103,6 +107,15 @@ public abstract class MixinMinecraft  implements IThreadListener, IPlayerUsage {
             ci.cancel();
     }
 
+    @Inject(method = "clickMouse",at = @At(value = "INVOKE", target = "Lnet/minecraft/client/entity/EntityPlayerSP;swingItem()V"))
+    public void fixSwing(CallbackInfo ci) {
+        AttackOrder.sendConditionalSwing(this.objectMouseOver);
+    }
+
+    @Inject(method = "clickMouse",at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/PlayerControllerMP;attackEntity(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V"))
+    public void fixAttack(CallbackInfo ci) {
+        AttackOrder.sendFixedAttack(mc.thePlayer, this.objectMouseOver.entityHit);
+    }
     /**
      * @author xia__mc
      * @reason to fix reach and hitBox won't work with autoClicker

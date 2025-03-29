@@ -12,8 +12,11 @@
     "event.MixinEventBus",
     "gui.MixinSplashProgress",
     "gui.MixinSplashProgressThread",
+    "item.MixinItemBlock",
+    "network.MixinC0FPacketConfirmTransaction",
     "network.MixinModList",
     "network.MixinNetworkManager",
+    "network.MixinS32PacketConfirmTransaction",
     "render.MixinFontRenderer",
     "render.MixinLayerCape",
     "render.MixinLocale",
@@ -21,7 +24,8 @@
     "render.MixinRendererLivingEntity",
     "world.MixinBlock",
     "world.MixinBlockLadder",
-    "world.MixinBlockWeb"
+    "world.MixinBlockWeb",
+    "world.MixinWorld"
   ],
   "client": [
     "client.MixinEntityRenderer",
@@ -34,8 +38,8 @@
     "gui.MixinGuiContainer",
     "gui.MixinGuiDownloadTerrain",
     "gui.MixinGuiMainMenu",
-    "gui.MixinGuiScreen",
     "gui.MixinGuiMultiplayer",
+    "gui.MixinGuiScreen",
     "network.MixinClientSpoofer",
     "network.MixinNetHandlerPlayClient",
     "render.MixinBlockRendererDispatcher",
