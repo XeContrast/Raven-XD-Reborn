@@ -99,6 +99,11 @@ public abstract class MixinMinecraft  implements IThreadListener, IPlayerUsage {
         }
     }
 
+    @Inject(method = "startGame", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;checkGLError(Ljava/lang/String;)V", ordinal = 2, shift = At.Shift.AFTER))
+    private void startGame(CallbackInfo callbackInfo) {
+        Raven.initGame();
+    }
+
     @Inject(method = "clickMouse", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/entity/EntityPlayerSP;swingItem()V"), cancellable = true)
     private void beforeSwingByClick(CallbackInfo ci) {
         ClickEvent event = new ClickEvent();

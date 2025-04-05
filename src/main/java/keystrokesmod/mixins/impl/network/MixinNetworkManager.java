@@ -86,7 +86,8 @@ public abstract class MixinNetworkManager extends SimpleChannelInboundHandler<Pa
                     var3.printStackTrace();
                 }
 
-                p_initChannel_1_.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new MessageDeserializer2()).addLast("decoder", new MessageDeserializer(EnumPacketDirection.CLIENTBOUND)).addLast("prepender", new MessageSerializer2()).addLast("encoder", new MessageSerializer(EnumPacketDirection.SERVERBOUND)).addLast("packet_handler", networkmanager);
+                p_initChannel_1_.pipeline().addLast((String)"timeout", (ChannelHandler)(new ReadTimeoutHandler(30))).addLast((String)"splitter", (ChannelHandler)(new MessageDeserializer2())).addLast((String)"decoder", (ChannelHandler)(new MessageDeserializer(EnumPacketDirection.CLIENTBOUND))).addLast((String)"prepender", (ChannelHandler)(new MessageSerializer2())).addLast((String)"encoder", (ChannelHandler)(new MessageSerializer(EnumPacketDirection.SERVERBOUND))).addLast((String)"packet_handler", (ChannelHandler)networkmanager);
+
                 if (p_initChannel_1_ instanceof SocketChannel && ViaLoadingBase.getInstance().getTargetVersion().getVersion() != ViaMCP.NATIVE_VERSION) {
                     final UserConnection user = new UserConnectionImpl(p_initChannel_1_, true);
                     new ProtocolPipelineImpl(user);
@@ -98,7 +99,7 @@ public abstract class MixinNetworkManager extends SimpleChannelInboundHandler<Pa
         return networkmanager;
     }
 
-    @Inject(method = "setCompressionTreshold",at = @At("RETURN"))
+    @Inject(method = "setCompressionTreshold",at = @At("TAIL"))
     public void idk(int p_setCompressionTreshold_1_, CallbackInfo ci) {
         this.channel.pipeline().fireUserEventTriggered(new CompressionReorderEvent());
     }

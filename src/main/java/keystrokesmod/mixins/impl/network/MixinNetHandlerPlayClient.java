@@ -53,7 +53,7 @@ public abstract class MixinNetHandlerPlayClient {
         }
     }
 
-    @Inject(method = "handleConfirmTransaction",at = @At(value = "INVOKE", target = "Lnet/minecraft/network/PacketThreadUtil;checkThreadAndEnqueue(Lnet/minecraft/network/Packet;Lnet/minecraft/network/INetHandler;Lnet/minecraft/util/IThreadListener;)V"), cancellable = true)
+    @Inject(method = "handleConfirmTransaction",at = @At(value = "INVOKE", target = "Lnet/minecraft/network/PacketThreadUtil;checkThreadAndEnqueue(Lnet/minecraft/network/Packet;Lnet/minecraft/network/INetHandler;Lnet/minecraft/util/IThreadListener;)V",shift = At.Shift.AFTER), cancellable = true)
     public void fixVia(S32PacketConfirmTransaction p_handleConfirmTransaction_1_, CallbackInfo ci) {
         if (ViaLoadingBase.getInstance().getTargetVersion().newerThanOrEqualTo(ProtocolVersion.v1_17)) {
             Minecraft.getMinecraft().getNetHandler().addToSendQueue(new C0FPacketConfirmTransaction(p_handleConfirmTransaction_1_.getWindowId(), (short) 0, false));

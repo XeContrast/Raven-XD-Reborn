@@ -93,6 +93,11 @@ public class Raven {
         MinecraftForge.EVENT_BUS.register(ModuleManager.dynamicManager);
         MinecraftForge.EVENT_BUS.register(new MoveableManager());
 
+        I18nManager.init();
+        AutoUpdate.init();
+    }
+
+    public static void initGame() {
         try {
             ViaMCP.create();
 
@@ -110,9 +115,6 @@ public class Raven {
         ViaLoadingBase.getInstance().getTargetVersion().olderThanOrEqualTo(ProtocolVersion.v1_8);
 
         ViaLoadingBase.PROTOCOLS.indexOf(ViaLoadingBase.getInstance().getTargetVersion());
-
-        I18nManager.init();
-        AutoUpdate.init();
     }
 
     @SubscribeEvent
